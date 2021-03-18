@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSecreto= "1673276819">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Site Exercicio 2</title>
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+        <div class="nav-wrapper darkBlue">
+          <a href="index.html" class="brand-logo">iniciar</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="noticias.html">Canais de noticias</a></li>
+            <li><a href="adicionarPessoa.html">Adicionar Pessoa</a></li>
+            <li><a href="listarPessoas.html">Listar pessoas</a></li>
+            <li><a href="sobre.html">Sobre o Site</a></li>
+            <li><a href="contato.html">Mande um e-mail pra mim</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <form action="">
+      <div class="row" style="margin: top 20px;">
+        
+          <div class="row">
+            <div class="input-field col m6 s12">
+              <input placeholder="Seu nome completo aqui" id="nome" type="text" class="validate">
+              <label for="nome">Nome Completo</label>
+            </div>
+          </div>
+          
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col m6 s12">
+              <input placeholder="dd/mm/aaaa" id="date" type="text" class="validate">
+              <label for="date">Data de Nascimento</label>
+            </div>
+          </div>
+         
+      </div>
+      <div class="row">
+        
+          <div class="row">
+            <div class="input-field col m6 s12">
+              <input placeholder="nome@dominio.com" id="email" type="text" class="validate">
+              <label for="email">E-mail</label>
+            </div>
+          </div>
+          
+      </div>
+      <label>Sexo</label>
+
+      <p>
+        <label>
+          <input name="sexo" type="radio"  />
+          <span>Masculino</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input name="sexo" type="radio" />
+          <span>Feminino</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input  name="sexo" type="radio"  />
+          <span>Não informar</span>
+        </label>
+      </p>
+      
+      <button class="btn waves-effect waves-light" type="reset" style="margin: 10px 5px;">Limpar</button>
+
+      <button class="btn waves-effect waves-light" type="submit">Cadastrar</button>
+
+    </form>
+
+    </div> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
