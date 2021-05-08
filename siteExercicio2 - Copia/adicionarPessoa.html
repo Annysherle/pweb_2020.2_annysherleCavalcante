@@ -6,34 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta codigoSecreto= "1673276819">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" th:href="@{style/style.css}">
-    <title>Site Exercicio 3</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Site Exercicio 2</title>
 </head>
 <body>
   <div class="container">
 
     <nav>
         <div class="nav-wrapper darkBlue">
-          <a href="/" class="brand-logo">iniciar</a>
+          <a href="index.html" class="brand-logo">iniciar</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="public/noticias.html">Canais de noticias</a></li>
-            <li><a href="/adicionarPessoa">Adicionar Pessoa</a></li>
-            <li><a href="/listarPessoas">Listar pessoas</a></li>
-            <li><a href="public/sobre.html">Sobre o Site</a></li>
-            <li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
+            <li><a href="noticias.html">Canais de noticias</a></li>
+            <li><a href="adicionarPessoa.html">Adicionar Pessoa</a></li>
+            <li><a href="listarPessoas.html">Listar pessoas</a></li>
+            <li><a href="sobre.html">Sobre o Site</a></li>
+            <li><a href="contato.html">Mande um e-mail pra mim</a></li>
           </ul>
         </div>
       </nav>
       
-         <form th:action="@{/editar/{id}(id=${pessoa.id})}" th:object="${pessoa}" method="POST">
+      <form action="adicionadaComSucesso.html">
 
-          <h3 style="padding: 10px 0 20px 0 ;">Formulário para editar pessoas:</h3>
+        <h3 style="padding: 10px 0 20px 0 ;">Formulário para cadastro pessoas:</h3>
 
       <div class="row" style="margin: top 20px;">
         
           <div class="row">
             <div class="input-field col m6 s12">
-              <input placeholder="Seu nome completo aqui" th:field=*{nome} id="nome" type="text" class="validate">
+              <input placeholder="Seu nome completo aqui" id="nome" type="text" class="validate">
               <label for="nome">Nome Completo</label>
             </div>
           </div>
@@ -43,7 +43,7 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col m6 s12">
-              <input type="date" placeholder="dd/mm/aaaa" th:field=*{dataNascimento} id="date" class="validate">
+              <input placeholder="dd/mm/aaaa" id="date" type="text" class="validate">
               <label for="date">Data de Nascimento</label>
             </div>
           </div>
@@ -53,7 +53,7 @@
         
           <div class="row">
             <div class="input-field col m6 s12">
-              <input placeholder="nome@dominio.com" th:field=*{email} id="email" type="text" class="validate">
+              <input placeholder="nome@dominio.com" id="email" type="text" class="validate">
               <label for="email">E-mail</label>
             </div>
           </div>
@@ -63,26 +63,26 @@
 
       <p>
         <label>
-          <input name="sexo" type="radio" value="Masculino" th:field=*{genero}  />
+          <input name="sexo" type="radio"  />
           <span>Masculino</span>
         </label>
       </p>
       <p>
         <label>
-          <input name="sexo" type="radio" value="Feminino" th:field=*{genero} />
+          <input name="sexo" type="radio" />
           <span>Feminino</span>
         </label>
       </p>
       <p>
         <label>
-          <input  name="sexo" type="radio" value="Não informado" th:field=*{genero}  />
+          <input  name="sexo" type="radio"  />
           <span>Não informar</span>
         </label>
       </p>
       
       <button class="btn waves-effect waves-light" type="reset" style="margin: 10px 5px;">Limpar</button>
 
-      <button class="btn waves-effect waves-light" type="submit">Editar</button>
+      <button class="btn waves-effect waves-light" type="submit">Cadastrar</button>
 
     </form>
 
@@ -90,4 +90,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
-
