@@ -1,4 +1,4 @@
-package br.com.annysherle.agropopshop.api.controllers;
+package br.com.annysherle.AgroPopShop.api.controllers;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.annysherle.agropopshop.api.models.Pedido;
-import br.com.annysherle.agropopshop.api.repository.PedidoRepository;
+import br.com.annysherle.AgroPopShop.api.models.Pedido;
+import br.com.annysherle.AgroPopShop.api.repository.PedidoRepository;
 
 @RestController
 @RequestMapping("/")

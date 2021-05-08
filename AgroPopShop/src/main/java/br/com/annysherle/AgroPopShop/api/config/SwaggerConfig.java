@@ -1,4 +1,4 @@
-package br.com.annysherle.agropopshop.api.config;
+package br.com.annysherle.AgroPopShop.api.config;
 
 /*
 Mudança na versão 3.0.0 do SpringFox:

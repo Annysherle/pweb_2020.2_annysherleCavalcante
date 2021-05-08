@@ -1,4 +1,4 @@
-package br.com.annysherle.agropopshop.api.models;
+package br.com.annysherle.AgroPopShop.api.models;
 
 import java.time.LocalDate;
 import java.util.List;

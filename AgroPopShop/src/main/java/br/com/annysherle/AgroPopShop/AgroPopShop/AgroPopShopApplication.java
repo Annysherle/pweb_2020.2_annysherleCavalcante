@@ -1,4 +1,4 @@
-package br.com.annysherle.agropopshop.AgroPopShop;
+package br.com.annysherle.AgroPopShop.AgroPopShop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
