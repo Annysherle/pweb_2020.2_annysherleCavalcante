@@ -13,20 +13,21 @@
 	<div classe="container">
 
 		<nav>
-			<div class="nav-wrapper brown">
-				<a href="/" class="brand-logo">iniciar</a>
+			<div class="nav-wrapper darkblue">
+				<a href="private/index.html" class="brand-logo">iniciar</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="public/vendas.html">Canal de vendas</a></li>
 					<li><a href="/cadastrarcliente">Cadastrar cliente</a></li>
-					<li><a href="/listarCliente">Listar cliente</a></li>
+					<li><a href="/cadastrarproduto">Cadastrar produto</a></li>
+					<li><a href="/listarcliente">Listar cliente</a></li>
 					<li><a href="public/sobre.html">Sobre o site</a></li>
 					<li><a href="public/contato.html">Mande um e-mail</a></li>
+					
 				</ul>
 			</div>
 		</nav>
-
 		<form method="POST" th:object="${cliente}"
-			th:action="@{cadastrarCliente}">
+			th:action="@{/cadastrarcliente}">
 
 			<h3 style="padding: 10px 0 20px 0;">formulário para cadastro de
 				cliente:</h3>
@@ -52,7 +53,7 @@
 			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input placeholder="nome@dominio.com" th:field="*{email}"
+						<input placeholder="anny@cavalcante.com" th:field="*{email}"
 							id="email" type="text" class="validate"> <label
 							for="email">E-mail</label>
 					</div>

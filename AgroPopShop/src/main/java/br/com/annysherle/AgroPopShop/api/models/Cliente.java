@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = " tb_cliente")
+@Table(name = "clientes")
 public class Cliente {
 
 	@Id
