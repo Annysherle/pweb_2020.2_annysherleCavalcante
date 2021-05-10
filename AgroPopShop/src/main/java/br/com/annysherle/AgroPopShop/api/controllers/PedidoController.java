@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.annysherle.AgroPopShop.api.models.Pedido;
 import br.com.annysherle.AgroPopShop.api.repository.PedidoRepository;
-
+/*
 @RestController
 @RequestMapping("/")
 public class PedidoController {
@@ -67,3 +67,4 @@ public class PedidoController {
 		return new ModelAndView("redirect:/listarPedidos");
 	}
 }
+*/
