@@ -20,6 +20,7 @@
 					<li><a href="/cadastrarcliente">Cadastrar cliente</a></li>
 					<li><a href="/cadastrarproduto">Cadastrar produto</a></li>
 					<li><a href="/listarcliente">Listar cliente</a></li>
+					<li><a href="/listarproduto">Listar produto</a></li>
 					<li><a href="public/sobre.html">Sobre o site</a></li>
 					<li><a href="public/contato.html">Mande um e-mail</a></li>
 					
@@ -41,37 +42,37 @@
       <div class="row">
           <div class="row">
             <div class="input-field col m6 s12">
-              <input type="date" placeholder="dd/mmm/aaaa" th:field="*{dataNascimento}">
-              <label for="date">Data Nascimento</label>
+              <input type="date" placeholder="dd/mmm/aaaa" th:field="*{dataFabricação}">
+              <label for="date">Data Fabricação</label>
             </div>
           </div>
       </div>
       <div class="row">
           <div class="row">
             <div class="input-field col m6 s12">
-              <input placeholder="nome@dominio.com" th:field="*{email}" id="email" type="text" class="validate">
-              <label for="email">E-mail</label>
+              <input placeholder="códigoproduto" th:field="*{códigoproduto}" id="códigoproduto" type="text" class="validate">
+              <label for="códigoproduto">Códigoproduto</label>
             </div>
           </div>
       </div>
       
-      <label for="first_name">Sexo</label>
+      <label for="first_name">Qualidade</label>
 
             <p>
               <label>
-                <input name="sexo" type="radio" th:field="*{genero}" value="Masculino" />       
-                <span>Masculino</span>
+                <input name="qualidade" type="radio" th:field="*{genero}" value="Perecivel" />       
+                <span>Perecivel</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="sexo" type="radio" th:field="*{genero}" value="Feminino" />
-                <span>Feminino</span>
+                <input name="qualidade" type="radio" th:field="*{genero}" value="NãoPerecivel" />
+                <span>NãoPerecivel</span>
               </label>
             </p>
             <p>
               <label>
-                <input nome= "sexo"  type="radio"  th:field="*{genero}" value="Não informado" />
+                <input nome= "qualidade"  type="radio"  th:field="*{genero}" value="Não informado" />
                 <span>Não informado</span>
               </label>
             </p>
@@ -84,4 +85,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
-
+      

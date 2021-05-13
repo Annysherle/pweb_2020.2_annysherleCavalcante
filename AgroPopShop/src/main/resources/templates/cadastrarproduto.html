@@ -14,12 +14,13 @@
 
    <nav>
 			<div class="nav-wrapper indigo darken-4">
-				<a href="private/index.html" class="brand-logo">iniciar</a>
+				<a href="/index" class="brand-logo">iniciar</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="public/vendas.html">Canal de vendas</a></li>
 					<li><a href="/cadastrarcliente">Cadastrar cliente</a></li>
 					<li><a href="/cadastrarproduto">Cadastrar produto</a></li>
 					<li><a href="/listarcliente">Listar cliente</a></li>
+					<li><a href="/listarproduto">Listar produto</a></li>
 					<li><a href="public/sobre.html">Sobre o site</a></li>
 					<li><a href="public/contato.html">Mande um e-mail</a></li>
 					
@@ -27,13 +28,13 @@
 			</div>
 		</nav>
 
-      <form method="POST" th:object="${produto}" th:action="@{/adicionarProduto}">
+      <form method="POST" th:object="${produto}" th:action="@{/cadastrarProduto}">
       
         <h3 style="padding: 10px 0 20px 0;"> formulário para cadastro de produto:</h3>
           <div class="margin-top:20px;">
           <div class="row">
             <div class="input-field col m6 s12">
-              <input placeholder=" Nome do produto aqui" th:field="*{nome}">
+              <input placeholder=" Nome do produto aqui" th:field="*{nomeproduto}">
               <label for="nameproduto">Nome do Podruto</label>
             </div>
           </div>
@@ -49,29 +50,29 @@
       <div class="row">
           <div class="row">
             <div class="input-field col m6 s12">
-              <input placeholder="nome@dominio.com" th:field="*{email}" id="email" type="text" class="validate">
-              <label for="email">E-mail</label>
+              <input placeholder="códigoproduto" th:field="*{códigoproduto}" id="códigoproduto" type="text" class="validate">
+              <label for="códigoproduto">Códigoproduto</label>
             </div>
           </div>
       </div>
       
-      <label for="first_name">Sexo</label>
+      <label for="first_name">Qualidade</label>
 
             <p>
               <label>
-                <input name="sexo" type="radio" th:field="*{genero}" value="Masculino" />       
-                <span>Masculino</span>
+                <input name="qualidade" type="radio" th:field="*{genero}" value="Perecivel" />       
+                <span>Perecivel</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="sexo" type="radio" th:field="*{genero}" value="Feminino" />
-                <span>Feminino</span>
+                <input name="qualidade" type="radio" th:field="*{genero}" value="NãoPerecivel" />
+                <span>NãoPerecivel</span>
               </label>
             </p>
             <p>
               <label>
-                <input nome= "sexo"  type="radio"  th:field="*{genero}" value="Não informado" />
+                <input nome= "qualidade"  type="radio"  th:field="*{genero}" value="Não informado" />
                 <span>Não informado</span>
               </label>
             </p>
