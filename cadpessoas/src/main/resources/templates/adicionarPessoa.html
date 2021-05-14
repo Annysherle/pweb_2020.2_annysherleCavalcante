@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta codigoSecreto="1876368532">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" th:href="@{style/style.css}">
-    <title>site3</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta codigoSecreto="1876368532">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" th:href="@{style/style.css}">
+<title>site3</title>
 </head>
 <body>
-<div classe="container">
-   <nav>
-     <div class="nav-wrapper brown">
-          <a href="/" class="brand-logo">iniciar</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="public/noticias.html">Canais de noticias</a></li>
-            <li><a href="/adicionarPessoa">Adicionar pessoa</a></li>
-            <li><a href="/listarPessoas">Listar pessoas</a></li>
-            <li><a href="public/sobre.html">Sobre o site</a></li>
-            <li><a href="public/contato.html">Mande um e-mail</a></li>
-          </ul>
-        </div>
-     </nav>
+	<div classe="container">
+		<nav>
+			<div class="nav-wrapper brown">
+				<a href="/" class="brand-logo">iniciar</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="public/noticias.html">Canais de noticias</a></li>
+					<li><a href="/adicionarPessoa">Adicionar pessoa</a></li>
+					<li><a href="/listarPessoas">Listar pessoas</a></li>
+					<li><a href="public/sobre.html">Sobre o site</a></li>
+					<li><a href="public/contato.html">Mande um e-mail</a></li>
+				</ul>
+			</div>
+		</nav>
 
-      <form method="POST" th:object="${pessoa}" th:action="@{/adicionarPessoa}">
-      
-        <h3 style="padding: 10px 0 20px 0;"> formulário para cadastro de pessoas:</h3>
-          <div class="margin-top:20px;">
-          <div class="row">
-            <div class="input-field col m6 s12">
-              <input placeholder="Seu nome completo aqui" th:field="*{nome}">
-              <label for="name">Nome Completo</label>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="row">
-            <div class="input-field col m6 s12">
-              <input type="date" placeholder="dd/mmm/aaaa" th:field="*{dataNascimento}">
-              <label for="date">Data Nascimento</label>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="row">
-            <div class="input-field col m6 s12">
-              <input placeholder="nome@dominio.com" th:field="*{email}" id="email" type="text" class="validate">
-              <label for="email">E-mail</label>
-            </div>
-          </div>
-      </div>
-      
-      <label for="first_name">Sexo</label>
+		<form method="POST" th:object="${pessoa}"
+			th:action="@{/adicionarPessoa}">
 
-            <p>
-              <label>
-                <input name="sexo" type="radio" th:field="*{genero}" value="Masculino" />       
-                <span>Masculino</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input name="sexo" type="radio" th:field="*{genero}" value="Feminino" />
-                <span>Feminino</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input nome= "sexo"  type="radio"  th:field="*{genero}" value="Não informado" />
-                <span>Não informado</span>
-              </label>
-            </p>
-        <button class="btn waves-effect waves-light" type="reset"style="margin: 10px 5px">Limpar</button>
-            
-        <button class="btn waves-effect waves-light" type="submit">Cadastrar</button>
+			<h3 style="padding: 10px 0 20px 0;">formulário para cadastro de
+				pessoas:</h3>
+			<div class="margin-top:20px;">
+				<div class="row">
+					<div class="input-field col m6 s12">
+						<input placeholder="Seu nome completo aqui" th:field="*{nome}">
+						<label for="name">Nome Completo</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row">
+					<div class="input-field col m6 s12">
+						<input type="date" placeholder="dd/mmm/aaaa"
+							th:field="*{dataNascimento}"> <label for="date">Data
+							Nascimento</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row">
+					<div class="input-field col m6 s12">
+						<input placeholder="nome@dominio.com" th:field="*{email}"
+							id="email" type="text" class="validate"> <label
+							for="email">E-mail</label>
+					</div>
+				</div>
+			</div>
 
-        <form>
-            
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+			<label for="first_name">Sexo</label>
+
+			<p>
+				<label> <input name="sexo" type="radio" th:field="*{genero}"
+					value="Masculino" /> <span>Masculino</span>
+				</label>
+			</p>
+			<p>
+				<label> <input name="sexo" type="radio" th:field="*{genero}"
+					value="Feminino" /> <span>Feminino</span>
+				</label>
+			</p>
+			<p>
+				<label> <input nome="sexo" type="radio" th:field="*{genero}"
+					value="Não informado" /> <span>Não informado</span>
+				</label>
+			</p>
+			<button class="btn waves-effect waves-light" type="reset"
+				style="margin: 10px 5px">Limpar</button>
+
+			<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>
+
+			<form>
+
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
 

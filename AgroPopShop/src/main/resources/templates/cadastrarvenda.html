@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta codigoSecreto="1813922036">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link th:href="@{/style/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{style/style.css}">
     <title>Site Exercicio Unidade 2</title>
 </head>
 <body>
@@ -18,7 +18,9 @@
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="public/vendas.html">Canal de vendas</a></li>
 					<li><a href="/cadastrarcliente">Cadastrar cliente</a></li>
+					<li><a href="/cadastrarproduto">Cadastrar produto</a></li>
 					<li><a href="/listarcliente">Listar cliente</a></li>
+					<li><a href="/listarproduto">Listar produto</a></li>
 					<li><a href="public/sobre.html">Sobre o site</a></li>
 					<li><a href="public/contato.html">Mande um e-mail</a></li>
 				</ul>
@@ -27,20 +29,20 @@
 
       <form method="POST" th:object="${venda}" th:action="@{/cadastrarVenda}">
       
-        <h3 style="padding: 10px 0 20px 0;"> formulário para cadastro de cliente:</h3>
+        <h3 style="padding: 10px 0 20px 0;"> formulário para cadastro de Venda:</h3>
           <div class="margin-top:20px;">
           <div class="row">
             <div class="input-field col m6 s12">
               <input placeholder="Seu nome completo aqui" th:field="*{nome}">
-              <label for="name">Nome Completo</label>
+              <label for="name">Nome Produto</label>
             </div>
           </div>
       </div>
       <div class="row">
           <div class="row">
             <div class="input-field col m6 s12">
-              <input type="date" placeholder="dd/mmm/aaaa" th:field="*{dataNascimento}">
-              <label for="date">Data Nascimento</label>
+              <input type="date" placeholder="dd/mmm/aaaa" th:field="*{dataValidade}">
+              <label for="date">DataValidade</label>
             </div>
           </div>
       </div>

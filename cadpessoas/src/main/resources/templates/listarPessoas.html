@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta codigoSecreto= "1654042756">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" th:href="@{style/style.css}">
-    <title>Site Exercício 3</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta codigoSecreto="1654042756">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" th:href="@{style/style.css}">
+<title>Site Exercício 3</title>
 </head>
 <body>
-  <div class="container">
+	<div class="container">
 
-    <nav>
-        <div class="nav-wrapper darkBlue">
-          <a href="/" class="brand-logo">iniciar</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="public/noticias.html">Canais de noticias</a></li>
-            <li><a href="/adicionarPessoa">Adicionar Pessoa</a></li>
-            <li><a href="/listarPessoas">Listar pessoas</a></li>
-            <li><a href="public/sobre.html">Sobre o Site</a></li>
-            <li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
-          </ul>
-        </div>
-      </nav>
-      
-      <h4 style="text-align: center; padding: 8px 0 20px 0;">Listra de Pessoas Cadastradas</h4>
-      <table>
-        <thead>
-          <tr>
-              <th>ID</th>
-              <th>Nome Completo</th>
-              <th>Data de Nascimento</th>
-              <th>E-mail</th>
-              <th>Sexo</th>
-              <th>Editar</th>
-              <th>Remover</th>
-          </tr>
-        </thead>
+		<nav>
+			<div class="nav-wrapper darkBlue">
+				<a href="/" class="brand-logo">iniciar</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="public/noticias.html">Canais de noticias</a></li>
+					<li><a href="/adicionarPessoa">Adicionar Pessoa</a></li>
+					<li><a href="/listarPessoas">Listar pessoas</a></li>
+					<li><a href="public/sobre.html">Sobre o Site</a></li>
+					<li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
+				</ul>
+			</div>
+		</nav>
 
-        <tbody>
-          <tr th:each="pessoa: ${pessoas}">
-          
-            <td th:text="${pessoa.id}"></td>
-            <td th:text="${pessoa.nome}"></td>
-            <td th:text="${#temporals.format(pessoa.dataNascimento,'dd/MM/yyyy')}"></td>
-            <td><a href="malito:jose@outro.com" th:text="${pessoa.email}"></a></td>
-            <td th:text="${pessoa.genero}"></td>
-            <td><a th:href="@{/editar/{id}(id=${pessoa.id})}">Editar</a></td>
-            <td><a th:href="@{/remover/{id}(id=${pessoa.id})}">Remover</a><td>
-            
-          </tr>
-          
-        </tbody>
-      </table>
-            
-    </div> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<h4 style="text-align: center; padding: 8px 0 20px 0;">Listra de
+			Pessoas Cadastradas</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome Completo</th>
+					<th>Data de Nascimento</th>
+					<th>E-mail</th>
+					<th>Sexo</th>
+					<th>Editar</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="pessoa: ${pessoas}">
+
+					<td th:text="${pessoa.id}"></td>
+					<td th:text="${pessoa.nome}"></td>
+					<td
+						th:text="${#temporals.format(pessoa.dataNascimento,'dd/MM/yyyy')}"></td>
+					<td><a href="malito:jose@outro.com" th:text="${pessoa.email}"></a></td>
+					<td th:text="${pessoa.genero}"></td>
+					<td><a th:href="@{/editar/{id}(id=${pessoa.id})}">Editar</a></td>
+					<td><a th:href="@{/remover/{id}(id=${pessoa.id})}">Remover</a>
+					<td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
 
