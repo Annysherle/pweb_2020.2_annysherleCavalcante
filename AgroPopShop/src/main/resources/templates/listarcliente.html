@@ -35,14 +35,14 @@
 	<table>
 		<thead>
 			<tr>
-					<th>Id</th>
-					<th>Nome Completo</th>
-					<th>Data de Nascimento</th>
-					<th>E-mail</th>
-					<th>Sexo</th>
-					<th>Editar</th>
-					<th>Remover</th>
-				</tr>
+				<th>Id</th>
+				<th>Nome Completo</th>
+				<th>Data de Nascimento</th>
+				<th>E-mail</th>
+				<th>Sexo</th>
+				<th>Editar</th>
+				<th>Remover</th>
+			</tr>
 		</thead>
 
 		<tbody>
@@ -52,8 +52,7 @@
 				<td th:text="${cliente.nome}"></td>
 				<td
 					th:text="${#temporals.format (cliente.dataNascimento,'dd/MM/yyyy'}}"></td>
-				<td><a href="malito:anny@cavalcante.com"
-					th:text="${cliente.email}"></a></td>
+				<td><a href="malito:jose@outro.com"th:text="${cliente.email}"></a></td>
 				<td th:text="${cliente.genero}"></td>
 				<td><a th:href="@{/editar/{id}(id=${cliente.id}}}">Editar</a></td>
 				<td><a th:href="@{/removedor/{id}(id=${cliente.id}}}">Removedor</a>

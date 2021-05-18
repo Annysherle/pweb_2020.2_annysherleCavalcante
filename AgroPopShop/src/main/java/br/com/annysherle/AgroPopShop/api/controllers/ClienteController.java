@@ -2,6 +2,7 @@ package br.com.annysherle.AgroPopShop.api.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +17,17 @@ import br.com.annysherle.AgroPopShop.api.repository.ClienteRepository;
 
 
 @RestController
-@RequestMapping(value = "/clientes")
+@RequestMapping(value = "/cliente")
 public class ClienteController {
 
+	
+	@Autowired
+	ClienteRepository clienteRepo;
+
+	@GetMapping
+	public String index() {
+		return "index.html";
+	}
 	ClienteRepository clienteRepository;
 
 	public ClienteController(ClienteRepository clienteRepository) {
