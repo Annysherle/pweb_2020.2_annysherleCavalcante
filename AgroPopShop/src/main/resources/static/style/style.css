@@ -1,12 +1,15 @@
 *{
-    padding: 0;
-    margin: 0 auto;
+    padding: 10 px;
+    margin: 20 px auto;
     box-sizing: border-box;
     font-family:Arial;
 
 
 
 
+}
+.menu a {
+	color: white;
 }
 
 
