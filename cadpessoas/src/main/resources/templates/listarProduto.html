@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta codigoSecreto="1813922036">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" th:href="@{style/style.css}">
+<title>Site Exercício Agropopshop</title>
+</head>
+<body>
+	<div class="container">
+
+		<nav>
+			<div class="nav-wrapper darkBlue">
+				<a href="/" class="brand-logo">iniciar</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="public/noticias.html">Canais de noticias</a></li>
+					<li><a href="/adicionarClientes">Adicionar Cliente</a></li>
+					<li><a href="/adicionarProdutos">Adicionar Produto</a></li>
+					<li><a href="/listarClientes">Listar clientes</a></li>
+					<li><a href="/listarProdutos">Listar produtos</a></li>
+					<li><a href="public/sobre.html">Sobre o Site</a></li>
+					<li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<h4 style="text-align: center; padding: 8px 0 20px 0;">Listar
+			Produto Cadastrado</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome Completo</th>
+					<th>marca</th>
+					<th>peso</th>
+					<th>altura</th>
+					<th>preço</th>
+					<th>largura</th>
+					<th>profundidade</th>
+					<th>Editar</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="produto: ${produtos}">
+
+					<td th:text="${produto.id}"></td>
+					<td th:text="${produto.nome}"></td>
+					<td th:text="${#temporals.format(produto.marca}"></td>
+					<td th: href="peso" th:text="${produto.peso}"></td>
+					<td th:text="${produto.altura}"></td>
+					<td th:text="${produto.preço}"></td>
+					<td th:text="${produto.largura}"></td>
+					<td th:text="${produto.profundidade}"></td>
+					<td><a th:href="@{/editar/{id}(id=${produto.id})}">Editar</a></td>
+					<td><a th:href="@{/remover/{id}(id=${produto.id})}">Remover</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+

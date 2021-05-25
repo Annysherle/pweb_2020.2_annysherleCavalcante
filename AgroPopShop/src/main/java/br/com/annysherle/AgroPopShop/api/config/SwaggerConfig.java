@@ -7,13 +7,9 @@ Detalhes aqui:
 https://www.treinaweb.com.br/blog/documentando-uma-api-spring-boot-com-o-swagger/
 https://stackoverflow.com/questions/62773219/suddenly-springfox-swagger-3-0-is-not-working-with-spring-webflux
 */
-	
-
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.google.common.base.Predicate;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -24,12 +20,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-          .select()
-          .apis((Predicate) RequestHandlerSelectors.any())
-          .paths(PathSelectors.any())
-          .build();
-    }
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any())
+				.build();
+	}
 }
