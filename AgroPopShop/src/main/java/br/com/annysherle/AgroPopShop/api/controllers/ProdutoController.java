@@ -1,47 +1,71 @@
 package br.com.annysherle.AgroPopShop.api.controllers;
 
+
+
 import java.util.List;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
 
 import br.com.annysherle.AgroPopShop.api.models.Produto;
 import br.com.annysherle.AgroPopShop.api.repository.ProdutoRepository;
 
-@RestController
-@RequestMapping(value = "/produto")
+@Controller
+@RequestMapping("/")
 public class ProdutoController {
 
-	ProdutoRepository produtoRepository;
-
-	public ProdutoController(ProdutoRepository produtoRepository) {
-		super();
-		this.produtoRepository = produtoRepository;
+	@Autowired
+	ProdutoRepository produtoRepo;
+	
+	@GetMapping("/listarProdutos")
+	public ModelAndView listarProdutos() {
+		List<Produto> lista = produtoRepo.findAll();
+		ModelAndView modelAndView = new ModelAndView("listarProdutos");
+		modelAndView.addObject("produtos",lista);
+		return modelAndView;
 	}
-
-	@PostMapping
-	public Produto save(@RequestBody Produto produto) {
-		return produtoRepository.save(produto);
+	
+	@GetMapping("/adicionarProdutos")
+	public ModelAndView formAdicionarProduto(){
+		ModelAndView modelAndView = new ModelAndView("adicionarProdutos");
+		modelAndView .addObject(new Produto());
+		return modelAndView ;
 	}
-
-	@GetMapping
-	public List<Produto> listaTodos() {
-		return produtoRepository.findAll();
+	
+	@PostMapping("/adicionarProdutos")
+	public String AdicionarProduto(Produto p) {
+		this.produtoRepo.save(p);
+		return "redirect:/listarProdutos";
 	}
-
-	@PutMapping
-	public Produto update(@RequestBody Produto produto) {
-		return produtoRepository.save(produto);
+	
+	@GetMapping("/editar/{id}")
+	public ModelAndView formEditarCliente(@PathVariable("id") long id) {
+		Produto produto = produtoRepo.findById(id)
+			.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+		ModelAndView modelAndView = new ModelAndView("editarProduto");
+		modelAndView.addObject(produto);
+		return modelAndView;
 	}
-
-	@DeleteMapping("/{id}")
-	public void apagar(@PathVariable Long id) {
-		produtoRepository.deleteById(id);
+	
+	@PostMapping("/editar/{id}")
+	public ModelAndView editarProduto(@PathVariable("id") long id, Produto produto) {
+		this.produtoRepo.save(produto);
+		return new ModelAndView("redirect:/listarProdutos");
+	}
+	
+	@GetMapping("/remover/{id}")
+	public ModelAndView removerProduto(@PathVariable("id") long id) {
+		Produto aRemover = produtoRepo.findById(id)
+			.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+		produtoRepo.delete(aRemover);
+		return new ModelAndView("redirect:/listarProdutos");
 	}
 }
+
+

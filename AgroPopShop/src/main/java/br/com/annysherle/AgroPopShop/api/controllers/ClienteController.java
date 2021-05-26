@@ -3,55 +3,70 @@ package br.com.annysherle.AgroPopShop.api.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.annysherle.AgroPopShop.api.models.Cliente;
 import br.com.annysherle.AgroPopShop.api.repository.ClienteRepository;
-
-
-@RestController
-@RequestMapping(value = "/cliente")
+@Controller
+@RequestMapping("/")
 public class ClienteController {
 
-	
 	@Autowired
 	ClienteRepository clienteRepo;
-
+	
 	@GetMapping
 	public String index() {
 		return "index.html";
 	}
-	ClienteRepository clienteRepository;
-
-	public ClienteController(ClienteRepository clienteRepository) {
-		super();
-		this.clienteRepository = clienteRepository;
+	
+	@GetMapping("/listarClientes")
+	public ModelAndView listarClientes() {
+		List<Cliente> lista = clienteRepo.findAll();
+		ModelAndView modelAndView = new ModelAndView("listarClientes");
+		modelAndView.addObject("clientes",lista);
+		return modelAndView;
 	}
-
-	@PostMapping
-	public Cliente save(@RequestBody Cliente cliente) {
-		return clienteRepository.save(cliente);
+	
+	@GetMapping("/adicionarClientes")
+	public ModelAndView formAdicionarCliente(){
+		ModelAndView modelAndView = new ModelAndView("adicionarClientes");
+		modelAndView .addObject(new Cliente());
+		return modelAndView ;
 	}
-
-	@GetMapping
-	public List<Cliente> listaTodos() {
-		return clienteRepository.findAll();
+	
+	@PostMapping("/adicionarClientes")
+	public String AdicionarCliente(Cliente c) {
+		this.clienteRepo.save(c);
+		return "redirect:/listarClientes";
 	}
-
-	@PutMapping
-	public Cliente update(@RequestBody Cliente cliente) {
-		return clienteRepository.save(cliente);
+	
+	@GetMapping("/editar/{id}")
+	public ModelAndView formEditarCliente(@PathVariable("id") long id) {
+		Cliente cliente = clienteRepo.findById(id)
+			.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+		ModelAndView modelAndView = new ModelAndView("editarCliente");
+		modelAndView.addObject(cliente);
+		return modelAndView;
 	}
-
-	@DeleteMapping("/{id}")
-	public void apagar(@PathVariable Long id) {
-		clienteRepository.deleteById(id);
+	
+	@PostMapping("/editar/{id}")
+	public ModelAndView editarCliente(@PathVariable("id") long id, Cliente cliente) {
+		this.clienteRepo.save(cliente);
+		return new ModelAndView("redirect:/listarClientes");
+	}
+	
+	@GetMapping("/remover/{id}")
+	public ModelAndView removerCliente(@PathVariable("id") long id) {
+		Cliente aRemover = clienteRepo.findById(id)
+			.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+		clienteRepo.delete(aRemover);
+		return new ModelAndView("redirect:/listarClientes");
 	}
 }
+
+
