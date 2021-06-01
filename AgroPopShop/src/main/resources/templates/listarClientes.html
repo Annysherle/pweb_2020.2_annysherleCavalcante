@@ -48,7 +48,7 @@
 
 					<td th:text="${cliente.id}"></td>
 					<td th:text="${cliente.nome}"></td>
-					<tdth:text="${#temporals.format(cliente.dataNascimento,'dd/MM/yyyy')}"></td>
+					<td th:text="${#temporals.format(cliente.dataNascimento,'dd/MM/yyyy')}"></td>
 					<td><a href="malito:Anny@outro.com" th:text="${cliente.email}"></a></td>
 					<td th:text="${cliente.genero}"></td>
 					<td><a th:href="@{/editar/{id}(id=${cliente.id})}">Editar</a></td>
