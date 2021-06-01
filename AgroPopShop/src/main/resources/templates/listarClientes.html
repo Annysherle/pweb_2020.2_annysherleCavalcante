@@ -17,19 +17,19 @@
 			<div class="nav-wrapper indigo darken-4">
 				<a href="/" class="brand-logo">iniciar</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="public/noticias.html">Canais de noticias</a></li>
+					<li><a href="public/vendas.html">Canais de Vendas</a></li>
 					<li><a href="/adicionarClientes">Adicionar Cliente</a></li>
 					<li><a href="/adicionarProdutos">Adicionar Produto</a></li>
 					<li><a href="/listarClientes">Listar clientes</a></li>
-				    <li><a href="/listarProdutos">Listar produtoss</a></li>
+				    <li><a href="/listarProdutos">Listar produtos</a></li>
                     <li><a href="public/sobre.html">Sobre o Site</a></li>
 				    <li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
 				</ul>
 			</div>
 		</nav>
 
-		<h4 style="text-align: center; padding: 8px 0 20px 0;">Listar
-			Cliente Cadastrado</h4>
+		<h4 style="text-align: center; padding: 8px 0 20px 0;">Lista de
+			Clientes Cadastrados</h4>
 		<table>
 			<thead>
 				<tr>
@@ -37,7 +37,7 @@
 					<th>Nome Completo</th>
 					<th>Data de Nascimento</th>
 					<th>E-mail</th>
-					<th>Sexo</th>
+					<th>Genero</th>
 					<th>Editar</th>
 					<th>Remover</th>
 				</tr>
@@ -49,7 +49,7 @@
 					<td th:text="${cliente.id}"></td>
 					<td th:text="${cliente.nome}"></td>
 					<tdth:text="${#temporals.format(cliente.dataNascimento,'dd/MM/yyyy')}"></td>
-					<td><a href="malito:jose@outro.com" th:text="${cliente.email}"></a></td>
+					<td><a href="malito:Anny@outro.com" th:text="${cliente.email}"></a></td>
 					<td th:text="${cliente.genero}"></td>
 					<td><a th:href="@{/editar/{id}(id=${cliente.id})}">Editar</a></td>
 					<td><a th:href="@{/remover/{id}(id=${cliente.id})}">Remover</a></td>

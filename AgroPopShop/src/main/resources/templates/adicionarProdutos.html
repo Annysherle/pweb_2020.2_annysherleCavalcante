@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt_br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta codigoSecreto= "1813922036">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" th:href="@{style/style.css}">
-    <title>Site Exercício Agropopshop</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta codigoSecreto="1813922036">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" th:href="@{style/style.css}">
+<title>Site Exercício Agropopshop</title>
 </head>
 <body>
-  <div class="container">
-
- <nav>
+	<div classe="container">
+		<nav>
 			<div class="nav-wrapper indigo darken-4">
 				<a href="/" class="brand-logo">iniciar</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -26,10 +26,10 @@
 				</ul>
 			</div>
 		</nav>
-      
-         <form th:action="@{/editarProduto/{id}(id=${produto.id})}" th:object="${produto}" method="POST">
 
-        <h3 style="padding: 10px 0 20px 0;">Formulário pra Cadastrar
+		<form th:action="@{/adicionarProdutos}" th:object="${produto}" method="POST">
+
+			<h3 style="padding: 10px 0 20px 0;">Formulário pra Cadastrar
 				Produtos:</h3>
 			<div class="margin-top:20px;">
 				<div class="row">
