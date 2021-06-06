@@ -20,13 +20,14 @@
 					<li><a href="/adicionarClientes">Adicionar Cliente</a></li>
 					<li><a href="/adicionarProdutos">Adicionar Produto</a></li>
 					<li><a href="/listarClientes">Listar clientes</a></li>
-				    <li><a href="/listarProdutos">Listar produtos</a></li>
-                    <li><a href="public/sobre.html">Sobre o Site</a></li>
-				    <li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
+					<li><a href="/listarProdutos">Listar produtos</a></li>
+					<li><a href="public/sobre.html">Sobre o Site</a></li>
+					<li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
 				</ul>
 			</div>
 		</nav>
-		<form th:action="@{/adicionarClientes}" th:object="${cliente}" method="POST">
+		<form th:action="@{/adicionarClientes}" th:object="${cliente}"
+			method="POST">
 
 			<h3 style="padding: 10px 0 20px 0;">Formulário pra Cadastrar
 				Clientes:</h3>
@@ -83,6 +84,15 @@
 
 				<script
 					src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+				<script>
+					window.rwbp = {
+						email : 'annysherlecavalcante@gmail.com',
+						phone : '5584998937566',
+						message : 'Olá, como posso te ajudar?'
+					}
+				</script>
+				<script defer async
+					src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
 </body>
 </html>
 

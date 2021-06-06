@@ -20,72 +20,68 @@
 					<li><a href="/adicionarClientes">Adicionar Cliente</a></li>
 					<li><a href="/adicionarProdutos">Adicionar Produto</a></li>
 					<li><a href="/listarClientes">Listar clientes</a></li>
-				    <li><a href="/listarProdutos">Listar produtos</a></li>
-                    <li><a href="public/sobre.html">Sobre o Site</a></li>
-				    <li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
+					<li><a href="/listarProdutos">Listar produtos</a></li>
+					<li><a href="public/sobre.html">Sobre o Site</a></li>
+					<li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
 				</ul>
 			</div>
 		</nav>
 
-		<form th:action="@{/adicionarProdutos}" th:object="${produto}" method="POST">
+		<form th:action="@{/adicionarProdutos}" th:object="${produto}"
+			method="POST">
 
 			<h3 style="padding: 10px 0 20px 0;">Formulário pra Cadastrar
 				Produtos:</h3>
 			<div class="margin-top:20px;">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input placeholder="Nome do Produto" th:field="*{nome}" type= "text">
-						<label for="name">Nome do Produto</label>
+						<input placeholder="Nome do Produto" th:field="*{nome}"
+							type="text"> <label for="name">Nome do Produto</label>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input type= "text" placeholder="marca"
-							th:field="*{marca}"> <label for="marca"> marca
-					</label>
+						<input type="text" placeholder="marca" th:field="*{marca}">
+						<label for="marca"> marca </label>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input placeholder="preço" th:field="*{preco}"
-							id="preço" type="number" class="validate"> <label
-							for="preço">Preço</label>
+						<input placeholder="preço" th:field="*{preco}" id="preço"
+							type="number" class="validate"> <label for="preço">Preço</label>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input placeholder="altura" th:field="*{altura}"
-							id="altura" type="number" class="validate"> <label
-							for="altura">Altura</label>
+						<input placeholder="altura" th:field="*{altura}" id="altura"
+							type="number" class="validate"> <label for="altura">Altura</label>
 					</div>
 				</div>
 			</div>
 
-		<div class="row">
+			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input placeholder="peso" th:field="*{peso}"
-							id="peso" type="number" class="validate"> <label
-							for="peso">Peso</label>
+						<input placeholder="peso" th:field="*{peso}" id="peso"
+							type="number" class="validate"> <label for="peso">Peso</label>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
-						<input placeholder="largura" th:field="*{largura}"
-							id="largura" type="number" class="validate"> <label
-							for="largura">Largura</label>
+						<input placeholder="largura" th:field="*{largura}" id="largura"
+							type="number" class="validate"> <label for="largura">Largura</label>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="row">
 					<div class="input-field col m6 s12">
@@ -100,10 +96,19 @@
 
 			<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>
 
-			</form>
+		</form>
 
-				<script
-					src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script>
+			window.rwbp = {
+				email : 'annysherlecavalcante@gmail.com',
+				phone : '5584998937566',
+				message : 'Olá, como posso te ajudar?'
+			}
+		</script>
+		<script defer async
+			src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
 </body>
 </html>
 

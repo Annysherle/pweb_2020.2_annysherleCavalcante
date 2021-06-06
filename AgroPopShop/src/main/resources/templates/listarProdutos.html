@@ -21,26 +21,26 @@
 					<li><a href="/adicionarClientes">Adicionar Cliente</a></li>
 					<li><a href="/adicionarProdutos">Adicionar Produto</a></li>
 					<li><a href="/listarClientes">Listar clientes</a></li>
-				    <li><a href="/listarProdutos">Listar produtos</a></li>
-                    <li><a href="public/sobre.html">Sobre o Site</a></li>
-				    <li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
+					<li><a href="/listarProdutos">Listar produtos</a></li>
+					<li><a href="public/sobre.html">Sobre o Site</a></li>
+					<li><a href="public/contato.html">Mande um e-mail pra mim</a></li>
 				</ul>
 			</div>
 			<nav>
-    <div class="nav-wrapper indigo">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
+				<div class="nav-wrapper indigo">
+					<form>
+						<div class="input-field">
+							<input id="search" type="search" required> <label
+								class="label-icon" for="search"><i
+								class="material-icons">search</i></label> <i class="material-icons">close</i>
+						</div>
+					</form>
+				</div>
+			</nav>
 		</nav>
-		<h4 style="text-align: center; padding: 8px 0 20px 0;">Lista de 
+		<h4 style="text-align: center; padding: 8px 0 20px 0;">Lista de
 			Produtos Cadastrados</h4>
-		<table class="centered" >
+		<table class="centered">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -68,7 +68,8 @@
 					<td th:text="${produto.preco}"></td>
 					<td th:text="${produto.largura +'cm'}"></td>
 					<td th:text="${produto.profundidade +'cm'}"></td>
-					<td th:text="${produto.altura*produto.largura*produto.profundidade}+'cm'"></td>
+					<td
+						th:text="${produto.altura*produto.largura*produto.profundidade}+'cm'"></td>
 					<td><a th:href="@{/editarProduto/{id}(id=${produto.id})}">Editar</a></td>
 					<td><a th:href="@{/removerProduto/{id}(id=${produto.id})}">Remover</a></td>
 				</tr>
@@ -79,6 +80,15 @@
 	</div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		window.rwbp = {
+			email : 'annysherlecavalcante@gmail.com',
+			phone : '5584998937566',
+			message : 'Olá, como posso te ajudar?'
+		}
+	</script>
+	<script defer async
+		src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
 </body>
 </html>
 
